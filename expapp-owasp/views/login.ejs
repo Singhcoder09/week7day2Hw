@@ -1,0 +1,22 @@
+<%- include('header'); %>
+<%- include('nav'); %>
+<main>
+<h3>
+    Login
+</h3>
+<form action="/login" method="POST">
+    <label for="username">UserName</label>
+    <input type="text" placeholder="username" id="xyz" name="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <small id="passwordHelp" class="form-text text-muted">Password should container
+        <span :class="has_minimum_length ? 'has_required' : ''">atleast 8 chaters</span>,
+        <span :class="has_lowercase ? 'has_required' : ''">one lowercase letter</span>,
+        <span :class="has_uppercase ? 'has_required' : ''">one uppercase letter</span>,
+        <span :class="has_number ? 'has_required' : ''">one number</span>, and 
+        <span :class="has_special ? 'has_required' : ''">one special character.</span>
+    </small>
+    <button class="btn btn-success">Login</button>
+</form>
+</main>
+
